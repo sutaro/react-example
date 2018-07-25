@@ -7,6 +7,8 @@ import {IAuthor} from '../../models/author';
 import * as toastr from "toastr";
 import {Redirect, RouteComponentProps} from "react-router";
 
+import 'toastr/build/toastr.css';
+
 export interface IManageAuthorPageState {
   author: IAuthor;
   dirty: boolean;
