@@ -14,7 +14,7 @@ export interface IAuthorFormProps {
 export class AuthorForm extends React.Component<IAuthorFormProps, {}> {
   render() {
     return (
-      <div>
+      <div id="author-form" >
         <form>
           <h1>Manage Author</h1>
           <TextInput

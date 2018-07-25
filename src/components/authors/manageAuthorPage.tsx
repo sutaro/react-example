@@ -86,13 +86,11 @@ export class ManageAuthorPage extends React.Component<IManageAuthorPageProps, IM
   render(): JSX.Element {
     if (this.state.redirect) return <Redirect to="/authors"/>;
     return (
-      <div>
         <AuthorForm
           author={this.state.author}
           onChange={this.setAuthorState}
           onSave={this.saveAuthor}
           errors={this.state.errors}/>
-      </div>
     );
   }
 };

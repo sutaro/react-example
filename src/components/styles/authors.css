@@ -1,0 +1,38 @@
+#author-page, #author-form {
+    margin-left: 20px;
+}
+
+h1 {
+    color: midnightblue;
+}
+
+.table{
+    margin-top: 20px;
+}
+
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+th, td {
+    padding: 15px;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.input-label{
+    font-size: small;
+}
+
+.input-error{
+    color:red;
+    font-size: small;
+}

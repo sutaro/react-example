@@ -6,6 +6,9 @@ import * as React from 'react';
 import { Link } from "react-router-dom";
 import {AuthorApi} from '../../api/authorApi';
 
+import '../styles/authors.css';
+
+
 export interface IAuthorProps{
 }
 
@@ -27,9 +30,9 @@ export class AuthorPage extends React.Component<IAuthorProps,IAuthorState>{
 	}
 
 	render():JSX.Element {
-		return <div>
-				<h1>Authors</h1>
-				<Link to="/author" className="btn btn-default">Add Author</Link>
+		return <div id="author-page">
+				<h1 className="author-page-title">Authors</h1>
+				<Link to="/author" className="add-author-btn btn btn-default">Add Author</Link>
 				<AuthorList authors={this.state.authors} />
 			</div>;
 	}

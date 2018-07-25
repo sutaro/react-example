@@ -3,6 +3,8 @@ import * as React from 'react';
 import { IAuthor } from "../../models/author";
 import { Link } from "react-router-dom";
 
+
+
 export interface IAuthorListProps{
 	authors:IAuthor[];
 }
