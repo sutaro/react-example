@@ -19,7 +19,7 @@ export class ManageAuthorPage extends React.Component<IManageAuthorPageProps,IMa
 	constructor(props:IManageAuthorPageProps){
 		super(props);
 		this.authorApi = new AuthorApi();
-
+		this.state={author:{} as IAuthor, dirty:false, errors:{}};
 	}
 	/*mixins: [
 		Router.Navigation
@@ -35,7 +35,7 @@ export class ManageAuthorPage extends React.Component<IManageAuthorPageProps,IMa
 	}*/
 
 	componentWillMount() {
-		var authorId = Number(this.props.params.id); //from the path '/author:id'
+		var authorId = this.props.params && Number(this.props.params.id); //from the path '/author:id'
 
 		if (authorId) {
 			this.authorApi.getAuthorById(authorId).then((author:IAuthor)=>

@@ -1,5 +1,5 @@
 import { Route, Switch } from 'react-router';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from "./components/App";
 import * as React from 'react';
 import { AboutPage } from './components/about/AboutPage';
@@ -9,16 +9,15 @@ import { NotFoundPage } from './components/NotFoundPage';
 
 export const AppRouter: React.StatelessComponent<{}> = () => {
     return (
-      <HashRouter>
-      <Switch>
-        <Route path="/" component={App} >
-        <Route path="/" component={App} />
+      <BrowserRouter>
+        <Switch>
+        <Route path="/" exact component={App} />
+        <Route path="/authors" component={AuthorPage} />
           <Route path="/about" component={AboutPage} />
-          <Route path="/authors" component={AuthorPage} />
+          <Route path="/addAuthor" exact component={ManageAuthorPage} />
           <Route path="/authors/:id" component={ManageAuthorPage} />
           <Route component={NotFoundPage}/>
-        </Route>
       </Switch>
-      </HashRouter>
+      </BrowserRouter>
     );
   }

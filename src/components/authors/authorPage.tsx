@@ -7,30 +7,29 @@ import { Link } from "react-router-dom";
 import {AuthorApi} from '../../api/authorApi';
 
 export interface IAuthorProps{
-	authorApi:AuthorApi;
 }
 
 export interface IAuthorState{
 	authors:IAuthor[];
+  authorApi:AuthorApi;
 }
 
 export class AuthorPage extends React.Component<IAuthorProps,IAuthorState>{
 	constructor(props:IAuthorProps){
 		super(props);
-		this.setState({
-			authors : []
-		});
+		this.state={authors:[], authorApi: new AuthorApi()};
 	}
 
-	componentDidMount() {
-		this.props.authorApi.getAllAuthors()
+	async componentDidMount() {
+		const authors = await this.state.authorApi.getAllAuthors();
+		this.state.authorApi.getAllAuthors()
 		.then((authors)=>this.setState({authors:authors}));
 	}
 
 	render():JSX.Element {
 		return <div>
 				<h1>Authors</h1>
-				<Link to="addAuthor" className="btn btn-default">Add Author</Link>
+				<Link to="authors/addAuthor" className="btn btn-default">Add Author</Link>
 				<AuthorList authors={this.state.authors} />
 			</div>;
 	}

@@ -1,9 +1,8 @@
 import * as React from 'react';
 import './styles/App.css';
 
-import { ManageAuthorPage } from './authors/manageAuthorPage';
 import { Header } from './common/Header';
-
+import {withRouter} from "react-router";
 
 export const App: React.StatelessComponent<{}> =(props)=> {
     return (
@@ -16,4 +15,4 @@ export const App: React.StatelessComponent<{}> =(props)=> {
     );
 };
 
-export default App;
+export default withRouter((App));
