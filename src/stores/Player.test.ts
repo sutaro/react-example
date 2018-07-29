@@ -10,7 +10,7 @@ describe(("Player"),()=>{
                 }
             };
         });
-        it('should check is playing if the play started',()=>{
+        test('should check is playing if the play started',()=>{
             const player:IPlayer= new Player(cd);
             spyOn(cd,'getName').and.callFake(()=>{
                 return "Michael Jackson";
