@@ -9,7 +9,9 @@ export interface ICD{
 }
 
 export class CD implements ICD{
-    getName(): string;
+    getName(): string{
+     return "";   
+    }
 }
 
 export class Player implements IPlayer{
